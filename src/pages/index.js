@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
 import Layout from '../components/layout'
+import Form from 'react-jsonschema-form'
+import { schema, uiSchema } from '../schema/login.js'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
+    <div className="center w-90 w-50-ns bg-very-very-light shadow-light pa3">
+      <Form schema={schema} uiSchema={uiSchema} />
+    </div>
   </Layout>
 )
 

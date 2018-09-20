@@ -1,0 +1,43 @@
+:root {
+  --shadow-light: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  --very-very-light: #fafafa;
+  --primary-color: #f90;
+}
+
+.title {
+  font-family: "PTSansNarrowRegular", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+.shadow-light {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.t-shadow-light {
+  text-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.fa-15x {
+  font-size: 1.5em;
+}
+
+.bg-very-very-light {
+  background-color: var(--very-very-light);
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.bg-primary-color {
+  background-color: var(--primary-color);
+}
+
+.b--primary-color {
+  border-color: var(--primary-color);
+}
+
+.userNav a {
+  flex-basis: 100%;
+}
