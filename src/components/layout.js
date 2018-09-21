@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import './layout.css'
+import '../assets/css/base.css'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -30,8 +30,8 @@ const Layout = ({ children }) => (
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
-          className="main center w-90 bg-near-white pt6"
-          style={{ width: '100vw', height: '100vh' }}
+          className="main center w-90 bg-near-white pv6"
+          style={{ width: '100vw', height: '100%' }}
         >
           {children}
         </div>

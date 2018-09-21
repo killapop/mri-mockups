@@ -2,6 +2,12 @@
   --shadow-light: 0 0 2px 1px rgba(0, 0, 0, 0.2);
   --very-very-light: #fafafa;
   --primary-color: #f90;
+  --white: #fff;
+}
+
+body {
+  font-family: PTSansRegular, Sans-serif;
+  overflow-x: hidden;
 }
 
 .title {
@@ -11,7 +17,7 @@
 }
 
 .shadow-light {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
 .t-shadow-light {
@@ -40,4 +46,8 @@
 
 .userNav a {
   flex-basis: 100%;
+}
+
+.section:nth-of-type(2n+2) {
+  background-color: var(--white);
 }
