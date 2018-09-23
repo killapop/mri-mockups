@@ -25,6 +25,7 @@ const Layout = ({ children }) => (
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
           ]}
+          base={{ href: '/' }}
         >
           <html lang="en" />
         </Helmet>

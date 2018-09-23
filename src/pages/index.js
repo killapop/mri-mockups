@@ -10,7 +10,7 @@ const indexSchema = [
     links: [
       {
         title: 'Login screen',
-        path: '/user',
+        path: '/user/',
       },
       {
         title: 'Forgot password',
@@ -18,7 +18,7 @@ const indexSchema = [
       },
       {
         title: 'Change password',
-        path: '/user/reset',
+        path: '/user/change',
       },
     ],
   },

@@ -3,6 +3,8 @@ export const login = {
     title: 'Login',
     type: 'object',
     required: ['email', 'password'],
+    submitButton: 'Login',
+    cancelButton: 'Cancel',
     properties: {
       email: {
         type: 'string',
@@ -29,6 +31,8 @@ export const forgot = {
     title: 'Forgot your password',
     type: 'object',
     required: ['email'],
+    submitButton: 'Reset my password',
+    cancelButton: 'Cancel',
     properties: {
       email: {
         type: 'string',
@@ -51,6 +55,8 @@ export const change = {
     title: 'Change your password',
     type: 'object',
     required: ['current_password'],
+    submitButton: 'Change password',
+    cancelButton: 'Cancel',
     properties: {
       current_password: {
         type: 'string',
