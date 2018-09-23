@@ -31,7 +31,7 @@ const indexSchema = [
         title: 'Dashboard',
         description:
           'Lists Users, Project proposals, Personal Statements and Bundles',
-        path: 'application/dashboard',
+        path: '/dashboard',
       },
       {
         title: 'Create form',
@@ -50,7 +50,7 @@ const indexSchema = [
         title: 'Account',
         description:
           'Lists Project Proposals and Bundles belonging to the Organisation',
-        path: 'application/dashboard',
+        path: '/dashboard/organisation',
       },
       {
         title: 'Edit form',

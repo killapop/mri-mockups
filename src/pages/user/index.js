@@ -10,7 +10,6 @@ class UserIndex extends React.Component {
 
   render() {
     const page = window.location.pathname.split('/').reverse()[0]
-    console.log(page ? page : 'login')
     const formSchema = Schemas[page ? page : 'login']
     return (
       <>

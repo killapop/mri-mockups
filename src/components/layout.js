@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           className="main center w-90 bg-near-white pv6"
-          style={{ width: '100vw', height: '100%' }}
+          style={{ width: '100vw', height: '100%', minHeight: '100vw' }}
         >
           {children}
         </div>

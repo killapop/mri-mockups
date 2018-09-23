@@ -19,7 +19,7 @@ module.exports = {
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-create-client-paths',
-      options: { prefixes: ['/user/*'] },
+      options: { prefixes: ['/user/*', '/dashboard/*'] },
     },
     // 'gatsby-plugin-preact',
     // {
