@@ -45,7 +45,7 @@ const backButton = () => {
 }
 const Header = ({ siteTitle }) => (
   <>
-    <div className="bg-white w-100 shadow-light fixed top-0 pv2 ph3">
+    <div className="bg-white z-999 w-100 shadow-light fixed top-0 pv2 ph3">
       <nav className="ttu flex justify-between">
         <div className="userNav flex justify-start">
           {userLinks.map(({ label, Icon, path }, key) => (
