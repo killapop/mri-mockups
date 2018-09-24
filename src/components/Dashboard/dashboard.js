@@ -3,6 +3,8 @@ import React from 'react'
 import _ from 'lodash'
 import TestValues from '../testValues.js'
 import Badge from './badge.js'
+import './badge.css'
+
 class Dashboard extends React.Component {
   constructor(props) {
     super(props)
@@ -13,6 +15,7 @@ class Dashboard extends React.Component {
       badges: [
         {
           title: 'Users',
+          icon: 'users',
           types: [
             {
               title: 'Organisations',
@@ -30,10 +33,58 @@ class Dashboard extends React.Component {
         },
         {
           title: 'Project proposals',
-          value: 39,
+          icon: 'project-diagram',
+          types: [
+            {
+              title: 'Submitted',
+              value: 16,
+            },
+            {
+              title: 'Bundled',
+              value: 33,
+            },
+          ],
         },
-        { title: 'Personal statements', value: 188 },
-        { title: 'Bundles', value: 77 },
+        {
+          title: 'Personal statements',
+          icon: 'id-card-alt',
+          types: [
+            {
+              title: 'Submitted',
+              value: 133,
+            },
+            {
+              title: 'Bundled',
+              value: 201,
+            },
+          ],
+        },
+        {
+          title: 'Bundles',
+          icon: 'cubes',
+          types: [
+            {
+              title: 'Submitted',
+              value: 5,
+            },
+            {
+              title: 'Validated',
+              value: 8,
+            },
+            {
+              title: 'Assessed',
+              value: 9,
+            },
+            {
+              title: 'Accepted',
+              value: 3,
+            },
+            {
+              title: 'Rejected',
+              value: 6,
+            },
+          ],
+        },
       ],
     }
     this.roleChangeHandler = this.roleChangeHandler.bind(this)

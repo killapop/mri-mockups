@@ -5,13 +5,23 @@ import './badge.css'
 
 class Badge extends React.Component {
   render() {
-    const hasValue = val => {
-      return val ? <div className="badgeValue">{val}</div> : ''
+    const badge = this.props.badge
+    let t = 0
+    const hasValue = () => {
+      return (
+        <div className="badgeValue">
+          {_
+            .chain(badge.types)
+            .map('value')
+            .sum()
+            .value()}
+        </div>
+      )
     }
     const badgeTypes = () => {
-      return this.props.badge.types ? (
+      return badge.types ? (
         <div className="badgeItems">
-          {_.map(this.props.badge.types, (type, idx) => (
+          {_.map(badge.types, (type, idx) => (
             <div
               key={idx}
               className="badgeItem relative mt3 mb2 w-100 bg-light-silver ph2 pv1"
@@ -27,15 +37,14 @@ class Badge extends React.Component {
     return (
       <>
         <div
-          className={`badge pa3 flex flex-column w-20 justify-start items-center ba pointer relative b--white bg-black-10 mr4 {this.props.activeState}`}
+          className={`badge pa3 flex flex-column justify-start items-center  pointer relative bg-light-gray mr3 {this.props.activeState}`}
           id={this.props.badge.title.replace(' ', '').toLowerCase()}
         >
+          <i className={`fa fa-${badge.icon} fa-3x mt3 mb1 gray`} />
+          {hasValue()}
           <div className="f4 gray t-shadow-light b">
             {this.props.badge.title}
           </div>
-
-          {hasValue(this.props.badge.value)}
-          {badgeTypes()}
         </div>
       </>
     )

@@ -1,8 +1,19 @@
+
+.badge {
+  width: 22%;
+  transition: all ease 0.2s;
+  opacity: 0.8;
+}
+
+.badge:hover,
+.badge.active {
+  background-color: #fff;
+  opacity: 1;
+}
+
 .badgeValue {
   background-color: #f90;
-  position: absolute;
-  top: -10px;
-  right: -10px;
+  margin: 20px 0;
   border-radius: 20%;
   padding: 10px;
   color: white;
