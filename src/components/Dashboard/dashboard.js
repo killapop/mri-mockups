@@ -3,6 +3,7 @@ import React from 'react'
 import _ from 'lodash'
 import TestValues from '../testValues.js'
 import Badge from './badge.js'
+import List from './list.js'
 import './badge.css'
 
 class Dashboard extends React.Component {
@@ -11,7 +12,7 @@ class Dashboard extends React.Component {
     this.state = {
       roles: ['Facilitator', 'Organisation', 'Beneficiary'],
       activeRole: this.getRole(),
-      activeBadge: this.getRole() === 'Bundles',
+      activeBadge: 'users',
       badges: [
         {
           title: 'Users',
@@ -86,9 +87,54 @@ class Dashboard extends React.Component {
           ],
         },
       ],
+      listData: {
+        users: {
+          columns: ['email', 'type'],
+          data: [
+            {
+              email: 'boo@baaa.com',
+              type: 'Organisation',
+            },
+            {
+              email: 'cats@dogs.com',
+              type: 'Artist',
+            },
+            {
+              email: 'boo@baaa.com',
+              type: 'Organisation',
+            },
+            {
+              email: 'boo@baaa.com',
+              type: 'Artist',
+            },
+          ],
+        },
+        projectproposals: {
+          columns: ['email', 'type'],
+          data: [
+            {
+              email: 'boo@baaa.com',
+              type: 'Organisation',
+            },
+            {
+              email: 'cats@dogs.com',
+              type: 'Artist',
+            },
+            {
+              email: 'boo@baaa.com',
+              type: 'Organisation',
+            },
+            {
+              email: 'boo@baaa.com',
+              type: 'Artist',
+            },
+          ],
+        },
+      },
     }
     this.roleChangeHandler = this.roleChangeHandler.bind(this)
     this.badges = this.badges.bind(this)
+    this.badgeChangeHandler = this.badgeChangeHandler.bind(this)
   }
 
   getRole() {
@@ -103,6 +149,11 @@ class Dashboard extends React.Component {
     this.setState(state => ({ activeRole: e.target.id }))
   }
 
+  badgeChangeHandler(e) {
+    e.persist()
+    this.setState(state => ({ activeBadge: e.target.id }))
+  }
+
   isChecked(e) {
     return e.target.id === this.state.activeRole ? true : false
   }
@@ -111,7 +162,15 @@ class Dashboard extends React.Component {
     return this.state.activeRole === 'facilitator' ? (
       <div className="badges flex flex-wrap">
         {_.map(this.state.badges, (badge, idx) => (
-          <Badge badge={badge} key={idx} />
+          <Badge
+            badge={badge}
+            key={idx}
+            clickHandler={this.badgeChangeHandler}
+            active={
+              this.state.activeBadge ===
+              badge.title.replace(' ', '').toLowerCase()
+            }
+          />
         ))}
       </div>
     ) : (
@@ -142,6 +201,16 @@ class Dashboard extends React.Component {
         <div className="w-80-ns center pa4">
           <div className="title">Dashboard - {this.state.activeRole}</div>
           {this.badges()}
+        </div>
+        <div className="lists w-80-ns center">
+          <List
+            data={
+              this.state.listData[
+                this.state.activeBadge.replace(' ', '').toLowerCase()
+              ]
+            }
+            title={this.state.activeBadge}
+          />
         </div>
       </>
     )

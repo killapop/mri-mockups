@@ -36,7 +36,10 @@ class Badge extends React.Component {
     return (
       <>
         <div
-          className={`badge pa3 flex flex-column justify-start items-center  pointer relative bg-light-gray mr3 {this.props.activeState}`}
+          onClick={this.props.clickHandler}
+          className={`badge pa3 flex flex-column justify-start items-center  pointer relative bg-light-gray mr3 ${
+            this.props.active ? 'active' : ''
+          }`}
           id={this.props.badge.title.replace(' ', '').toLowerCase()}
         >
           <i className={`fa fa-${badge.icon} fa-3x mt3 mb1 gray`} />
@@ -53,6 +56,8 @@ class Badge extends React.Component {
 Badge.propTypes = {
   activeState: PropTypes.bool,
   badge: PropTypes.object.isRequired,
+  clickHandler: PropTypes.func,
+  active: PropTypes.bool,
 }
 
 export default Badge

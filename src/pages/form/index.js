@@ -1,9 +1,10 @@
 import React from 'react'
 import Form from 'react-jsonschema-form'
-import * as Schemas from '../../schema/user'
+import * as Schemas from '../../schema/forms'
 import Layout from '../../components/layout'
+import '../../components/form/form.css'
 
-class UserIndex extends React.Component {
+class FormIndex extends React.Component {
   // constructor(props) {
   //   super(props)
   // }
@@ -27,4 +28,4 @@ class UserIndex extends React.Component {
   }
 }
 
-export default UserIndex
+export default FormIndex

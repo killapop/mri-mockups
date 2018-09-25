@@ -73,3 +73,27 @@ export const change = {
     },
   },
 }
+
+export const create = {
+  schema: {
+    title: 'Add user',
+    type: 'object',
+    required: ['email'],
+    submitButton: 'Create user',
+    cancelButton: 'Cancel',
+    properties: {
+      current_password: {
+        type: 'string',
+        title: 'Current password',
+        placeholder: 'Current password',
+      },
+    },
+  },
+  uiSchema: {
+    email: {
+      'ui:widget': 'email',
+      'ui:autofocus': true,
+      'ui:help': 'Please enter your email address',
+    },
+  },
+}

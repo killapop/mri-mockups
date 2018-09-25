@@ -37,7 +37,7 @@ const indexSchema = [
         title: 'Create form',
         description:
           'Form for creating Users, Project Proposals, Personal Statements and Bundles',
-        path: 'application/form',
+        path: '/form',
       },
     ],
   },
@@ -55,14 +55,27 @@ const indexSchema = [
       {
         title: 'Edit form',
         description: 'Edit Project proposal',
-        path: 'application/form',
+        path: '/form/projectProposal',
       },
     ],
   },
   {
     title: 'Beneficiaries (Artists and Activists at risk)',
-    description: '',
-    links: [],
+    description:
+      'Manage the account, lists all personal statements, change password',
+    links: [
+      {
+        title: 'Account',
+        description:
+          'Lists Personal Statements and Bundles belonging to the Beneficiary',
+        path: '/dashboard/beneficiary',
+      },
+      {
+        title: 'Edit form',
+        description: 'Edit Personal Statements',
+        path: '/form/personalStatement',
+      },
+    ],
   },
 ]
 
